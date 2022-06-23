@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "express-api": "apps/express-api"
+    "bot": "apps/bot",
+    "express-api": "apps/express-api",
+    "feature-logger": "libs/feature-logger"
   }
 }
