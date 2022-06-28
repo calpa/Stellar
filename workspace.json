@@ -4,6 +4,7 @@
   "projects": {
     "bot": "apps/bot",
     "express-api": "apps/express-api",
-    "feature-logger": "libs/feature-logger"
+    "feature-logger": "libs/feature-logger",
+    "util-health": "libs/util-health"
   }
 }

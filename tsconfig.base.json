@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@stellar/feature-logger": ["libs/feature-logger/src/index.ts"]
+      "@stellar/feature-logger": ["libs/feature-logger/src/index.ts"],
+      "@stellar/util-health": ["libs/util-health/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

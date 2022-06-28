@@ -1,10 +1,13 @@
 import * as express from 'express';
 
 import { useLogger } from '@stellar/feature-logger';
+import { health } from '@stellar/util-health'
 
 const app = express();
 
 useLogger(app)
+
+app.use('/health', health)
 
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to express-api!' });
