@@ -1,0 +1,7 @@
+{
+    "main": "src/main.ts",
+    "serverless": {
+        "app": "stellar",
+        "org": "calpa"
+    }
+}

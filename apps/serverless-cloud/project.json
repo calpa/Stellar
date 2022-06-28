@@ -1,0 +1,68 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/serverless-cloud/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/serverless-cloud",
+        "main": "apps/serverless-cloud/src/main.ts",
+        "tsConfig": "apps/serverless-cloud/tsconfig.app.json",
+        "assets": [
+          "apps/serverless-cloud/src/assets"
+        ],
+        "generatePackageJson": true,
+        "sourceMap": false
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/serverless-cloud/src/environments/environment.ts",
+              "with": "apps/serverless-cloud/src/environments/environment.prod.ts"
+            },
+            {
+              "replace": "apps/serverless-cloud/package.json",
+              "with": "apps/serverless-cloud/src/environments/package.prod.json"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "serverless-cloud:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/serverless-cloud/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/serverless-cloud"
+      ],
+      "options": {
+        "jestConfig": "apps/serverless-cloud/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

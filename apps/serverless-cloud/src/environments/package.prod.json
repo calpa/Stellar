@@ -1,0 +1,7 @@
+{
+    "main": "main.js",
+    "serverless": {
+        "app": "stellar",
+        "org": "calpa"
+    }
+}
