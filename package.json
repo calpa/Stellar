@@ -5,11 +5,13 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx run-many --target=test --all --parallel",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
     "express": "4.17.2",
+    "lint-staged": "^13.0.3",
     "morgan": "^1.10.0",
     "supertest": "^6.2.3",
     "tslib": "^2.3.0"
@@ -30,6 +32,7 @@
     "@typescript-eslint/parser": "~5.24.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
+    "husky": "^8.0.0",
     "jest": "27.5.1",
     "nx": "14.3.6",
     "prettier": "^2.6.2",
