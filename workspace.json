@@ -5,6 +5,7 @@
     "bot": "apps/bot",
     "express-api": "apps/express-api",
     "feature-logger": "libs/feature-logger",
+    "manga": "libs/manga",
     "nest-api": "apps/nest-api",
     "serverless-cloud": "apps/serverless-cloud",
     "util-health": "libs/util-health"
