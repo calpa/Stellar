@@ -1,26 +1,16 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { manhuagui } from '@stellar/manhuagui';
 
 @Injectable()
 export class MangaService {
+    private readonly logger = new Logger(MangaService.name);
     async find(id: string) {
         const info = await manhuagui(id)
 
         return info
     }
 
-    async findMany(ids: string[] | string) {
-        if (typeof ids === 'string') {
-            return [await this.find(ids)]
-        }
-
-        const results = []
-
-        for (const id of ids) {
-            const res = await this.find(id)
-            results.push(res)
-        }
-
-        return results
+    async findMany(ids: string[]) {
+        return Promise.all(ids.map(async id => this.find(id)))
     }
 }

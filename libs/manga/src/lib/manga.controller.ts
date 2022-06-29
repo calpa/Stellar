@@ -6,8 +6,6 @@ import { MangaService } from './manga.service';
 
 @Controller('manga')
 export class MangaController {
-    private readonly logger = new Logger(MangaService.name);
-
     constructor(private mangaService: MangaService) { }
 
     @Get(':ids')
