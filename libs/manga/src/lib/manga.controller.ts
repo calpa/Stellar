@@ -1,12 +1,17 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Query, Logger, Param, Body } from '@nestjs/common';
+import { IsArray } from 'class-validator';
+import { Transform } from 'class-transformer'
+import { MangaDTO } from './manga.dto';
 import { MangaService } from './manga.service';
 
 @Controller('manga')
 export class MangaController {
+    private readonly logger = new Logger(MangaService.name);
+
     constructor(private mangaService: MangaService) { }
 
-    @Get(':id')
-    find(@Param('id') id: string) {
-        return this.mangaService.find(id)
+    @Get(':ids')
+    async findMany(@Param() params: MangaDTO) {
+        return await this.mangaService.findMany(params.ids)
     }
 }
