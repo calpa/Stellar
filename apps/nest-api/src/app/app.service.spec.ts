@@ -15,7 +15,7 @@ describe('AppService', () => {
 
   describe('getData', () => {
     it('should return "Welcome to nest-api!"', () => {
-      expect(service.getData()).toEqual({ message: 'Welcome to nest-api!' });
+      expect(service.getData()).toEqual({ message: 'Nyahello!' });
     });
   });
 });

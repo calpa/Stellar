@@ -17,7 +17,7 @@ describe('AppController', () => {
     it('should return "Welcome to nest-api!"', () => {
       const appController = app.get<AppController>(AppController);
       expect(appController.getData()).toEqual({
-        message: 'Welcome to nest-api!',
+        message: 'Nyahello!',
       });
     });
   });
